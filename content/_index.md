@@ -59,45 +59,45 @@ title: Hjem
         <tr>
             <td class="tg-fymr"><span style="font-weight:bold">08:00</span></td>
             <td class="tg-0pky"></td>
-            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/70512" target="_blank">Printed Electronic
+            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/le/lessons/70512" target="_blank">Printed Electronic
                     Technologies<br>5125-120</a></td>
-            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71233" target="_blank">Photonic
+            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/le/lessons/71233" target="_blank">Photonic
                     Devices<br>5125-423</a></td>
-            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71263" target="_blank">RF System
+            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/le/lessons/71263" target="_blank">RF System
                     Design<br>5125-235</a></td>
             <td class="tg-0pky"></td>
         </tr>
         <tr>
             <td class="tg-fymr"><span style="font-weight:bold">10:00</span></td>
             <td class="tg-0pky"></td>
-            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/70512" target="_blank">Printed Electronic
+            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/le/lessons/70512" target="_blank">Printed Electronic
                     Technologies<br>5125-120</a></td>
-            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71233" target="_blank">Photonic
+            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/le/lessons/71233" target="_blank">Photonic
                     Devices<br>5125-423</a></td>
-            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71263" target="_blank">RF System
+            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/le/lessons/71263" target="_blank">RF System
                     Design<br>5125-235</a></td>
             <td class="tg-0pky"></td>
         </tr>
         <tr>
             <td class="tg-fymr"><span style="font-weight:bold">12:00</span></td>
-            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71233" target="_blank">Photonic
+            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/le/lessons/71233" target="_blank">Photonic
                     Devices<br>5125-423</a></td>
             <td class="tg-0pky"></td>
             <td class="tg-0pky"></td>
-            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71090" target="_blank">Electronic Hardware
+            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/le/lessons/71090" target="_blank">Electronic Hardware
                     System Design<br>5125-235</a></td>
-            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71305" target="_blank">Wearable and
+            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/le/lessons/71305" target="_blank">Wearable and
                     Implantable Devices<br>5125-423</a></td>
         </tr>
         <tr>
             <td class="tg-fymr"><span style="font-weight:bold">14:00</span></td>
-            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71233" target="_blank">Photonic
+            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/le/lessons/71233" target="_blank">Photonic
                     Devices<br>5125-423</a></td>
             <td class="tg-0pky"></td>
             <td class="tg-0pky"></td>
-            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71090" target="_blank">Electronic Hardware
+            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/le/lessons/71090" target="_blank">Electronic Hardware
                     System Design<br>5125-235</a></td>
-            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71305" target="_blank">Wearable and
+            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/le/lessons/71305" target="_blank">Wearable and
                     Implantable Devices<br>5125-423</a></td>
         </tr>
     </tbody>
