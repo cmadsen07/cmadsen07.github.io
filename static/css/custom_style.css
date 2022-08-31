@@ -3,6 +3,7 @@ pre#logo {
   box-shadow: 0px 0px 0px #eee;
   padding: 1em;
   overflow-x: auto;
+  font-family: monospace;
 }
 
 a {
