@@ -1,0 +1,18 @@
+pre#logo {
+  border: 0px solid #ddd;
+  box-shadow: 0px 0px 0px #eee;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+a {
+	color: black;
+}
+
+a:visited {
+	color:black;
+}
+
+a:hover {
+	font-style: italic;
+}
