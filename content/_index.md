@@ -63,7 +63,7 @@ title: Hjem
                     Technologies<br>5125-120</a></td>
             <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71233" target="_blank">Photonic
                     Devices<br>5125-423</a></td>
-            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71263" traget="_blank">RF System
+            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71263" target="_blank">RF System
                     Design<br>5125-235</a></td>
             <td class="tg-0pky"></td>
         </tr>
@@ -74,7 +74,7 @@ title: Hjem
                     Technologies<br>5125-120</a></td>
             <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71233" target="_blank">Photonic
                     Devices<br>5125-423</a></td>
-            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71263" traget="_blank">RF System
+            <td class="tg-0pky"><a href="https://brightspace.au.dk/d2l/home/71263" target="_blank">RF System
                     Design<br>5125-235</a></td>
             <td class="tg-0pky"></td>
         </tr>
