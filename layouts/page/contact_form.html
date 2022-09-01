@@ -1,0 +1,16 @@
+{{ partial "header.html" . }}
+
+
+{{ .Content }}
+<div style="text-align:center;">
+<div style="width:80%">
+<form action="https://getform.io/f/d1e43282-28a4-4118-a466-ac986ead93e4" 
+      method="POST"
+      accept-charset="UTF-8"
+      id="usrform">
+    Navn: <input type="text" name="fullname">
+    <button type="submit">Send</button>
+</form><br>
+<textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Din besked her..."></textarea>
+</div>
+</div>
