@@ -1,0 +1,11 @@
+{{ $dir := string .gallery_dir }}
+<div class="image-gallery">
+{{ range (readDir (print "/static" $dir)) }}
+  {{- $image := resources.Get (printf "%s/%s" $dir .Name) -}}
+  {{- $imageurl := printf "%s/%s" $dir .Name -}}
+  {{- $imagetitle := index (split .Name ".") 0 -}}
+  <a href="{{ $imageurl }}" target="_blank">
+    <img src="{{ $imageurl }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}" style="max-width:300px;padding:10px;">
+  </a>
+{{ end }}
+</div>

@@ -5,4 +5,4 @@ title: Hjem
 
 Og velkommen til alle nye besøgende :)
 
-Forneden ses et skema, kontakt mig hvis der er noget der skal tilføjes.
+Forneden ses et skema, [kontakt](/kontakt) mig hvis der er noget der skal tilføjes.

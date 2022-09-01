@@ -4,6 +4,7 @@ pre#logo {
   padding: 1em;
   overflow-x: auto;
   font-family: monospace;
+  font-size: 11px;
 }
 
 a {

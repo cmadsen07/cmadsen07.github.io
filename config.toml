@@ -1,7 +1,8 @@
 baseURL = 'http://example.org/'
-languageCode = 'en-us'
+languageCode = 'da-dk'
 title = 'cmadsen07'
 theme = "xmin" 
+pluralizeListTitles = "false"
 
 [[menu.main]]
 name = "Hjem"
@@ -9,6 +10,21 @@ url = ""
 weight = 1
 
 [[menu.main]]
-name = "About"
-url = "about/"
+name = "Bodegarute"
+url = "bodega/"
 weight = 2
+
+[[menu.main]]
+name = "Memes"
+url = "memes/"
+weight = 3
+
+[[menu.main]]
+name = "Termer"
+url = "termer/"
+weight = 4
+
+[[menu.main]]
+name = "Kontakt"
+url = "kontakt/"
+weight = 10
