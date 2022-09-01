@@ -1,4 +1,5 @@
 ---
+title: "Kontakt"
 type: "page"
 layout: "contact_form"
 ---

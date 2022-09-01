@@ -1,4 +1,5 @@
 ---
+title: "Memes"
 type: "page"
 layout: "image_list"
 ---

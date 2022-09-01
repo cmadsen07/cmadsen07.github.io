@@ -1,1 +1,6 @@
 <link rel="stylesheet" href="{{ "css/custom_style.css" | relURL }}" />
+<!-- Additional Header -->
+{{ with .Params.header }} 
+  <script src="{{ .polyfill }}"></script>
+  <script src="/js/map.js"></script>
+{{ end }}
