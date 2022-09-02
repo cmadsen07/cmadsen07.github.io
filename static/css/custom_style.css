@@ -4,7 +4,50 @@ pre#logo {
   padding: 1em;
   overflow-x: auto;
   font-family: monospace;
-  font-size: 11px;
+}
+
+.tg td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+  pre#logo {
+    font-size: 11px;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  pre#logo {
+    font-size: 7px;
+  }
+  .tg th {
+    font-size: 11px;
+  }
+
+  .tg td {
+    font-size: 11px;
+  }
 }
 
 a {
