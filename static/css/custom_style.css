@@ -18,3 +18,10 @@ a:visited {
 a:hover {
 	font-style: italic;
 }
+
+img[src$='#center'] {
+  display: block;
+  margin: 1.0rem auto;
+  max-width: 100%;
+  height: auto;
+}

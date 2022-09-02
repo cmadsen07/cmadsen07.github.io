@@ -29,35 +29,41 @@ function arrayEquals(a, b) {
 }
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-  var all = [[56.15832592879012, 10.197811869512595], [56.158965236429026, 10.201105621938014], [56.14595066379803, 10.193434446243746]];
+  var all = [[56.15832592879012, 10.197811869512595], 
+              [56.158965236429026, 10.201105621938014], 
+              [56.14595066379803, 10.193434446243746]];
   const waypts = []
   var start = document.getElementById("start").value;
-  var end = document.getElementById("end").value;
   var num = document.getElementById("num").value;
-  if (start == end) {
-    alert("Det er ikke en tur hvis start og slut er det samme sted.");
-    return
-  }
   const startArr = start.split(',').map(element => {
     return Number(element);
   });
-  const endArr = end.split(',').map(element => {
-    return Number(element);
-  });
-  while (waypts.length < num) {
-    rand_num = Math.floor(Math.random() * num);
-    console.log(startArr)
-    console.log(all[rand_num])
-    if (arrayEquals(startArr, all[rand_num]) || arrayEquals(endArr, all[rand_num])) {
-      rand_num = Math.floor(Math.random() * num);
+  console.log(num - 1)
+  while (waypts.length < num - 2) {
+    rand_num = Math.floor(Math.random() * all.length);
+    if (arrayEquals(startArr, all[rand_num])) {
+      rand_num = Math.floor(Math.random() * all.length);
     } else {
       waypts.push({
         location: new google.maps.LatLng(all[rand_num][0], all[rand_num][1]),
         stopover: true,
       });
+      all.splice(rand_num, 1)
     }
   }
-  console.log(waypts);
+  var end = start;
+ rand_num = Math.floor(Math.random() * all.length);
+  if (arrayEquals(startArr, all[rand_num])) {
+    rand_num = Math.floor(Math.random() * all.length);
+  } else {
+    var end = new google.maps.LatLng(all[rand_num][0], all[rand_num][1])
+    all.splice(rand_num, 1)
+  }
+  
+  if (end == start) {
+    alert("Der er sket en fejl, prøv at genindlæse siden.");
+    return
+  }
 
   directionsService
     .route({
@@ -71,6 +77,10 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
       directionsRenderer.setDirections(response);
     }).catch((e) => window.alert("Directions request failed due to " + status));
       const route = response.routes[0];
+
+  all = [[56.15832592879012, 10.197811869512595], 
+              [56.158965236429026, 10.201105621938014], 
+              [56.14595066379803, 10.193434446243746]];
 }
 
 window.initMap = initMap();

@@ -1,6 +1,6 @@
-baseURL = 'http://example.org/'
+baseURL = 'http://cmadsen.tk/'
 languageCode = 'da-dk'
-title = 'cmadsen07'
+title = 'cmadsen'
 theme = "xmin" 
 pluralizeListTitles = "false"
 
