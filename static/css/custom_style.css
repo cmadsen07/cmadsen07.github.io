@@ -84,3 +84,7 @@ img[src$='#center'] {
   margin: 1em;
   font-weight: bold;
 }
+
+.menu li {
+  margin: 10px;
+}
