@@ -68,3 +68,19 @@ img[src$='#center'] {
   max-width: 100%;
   height: auto;
 }
+
+.quote {
+  margin: 0;
+  padding: 1em;
+  border-radius: 1em;
+}
+.quote figcaption {
+  margin: 1em;
+  text-align: right;
+  padding-right: 3em;
+}
+.quote blockquote {
+  background: none;
+  margin: 1em;
+  font-weight: bold;
+}

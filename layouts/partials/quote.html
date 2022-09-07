@@ -1,0 +1,13 @@
+<div id="quote">
+	{{ $slice := slice $.Site.Data.quotes.quotes }}
+	{{ $shuffled := shuffle (index $slice 0) }}
+	{{ $random := index $shuffled 0 }}
+	<figure class="quote">
+	  <blockquote>
+	    "{{$random.quote.text}}"
+	  </blockquote>
+	  <figcaption>
+	    &mdash; {{ $random.quote.name }}
+	  </figcaption>
+	</figure>
+</div>
