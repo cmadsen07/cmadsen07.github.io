@@ -11,6 +11,10 @@ function initMap() {
   document.getElementById("submit").addEventListener("click", () => {
     calculateAndDisplayRoute(directionsService, directionsRenderer);
   });
+  document.getElementById("submitRegen").addEventListener("click", () => {
+    let regenText = document.getElementById("regenText").value;
+    regenRoute(directionsService, directionsRenderer, regenText);
+  });
 }
 
 function remove(array, element) {
@@ -54,8 +58,19 @@ function findClosestPair(elements, search) {
     });
 }
 
+String.prototype.hashCode = function() {
+  var hash = 0, i, chr;
+  if (this.length === 0) return hash;
+  for (i = 0; i < this.length; i++) {
+    chr   = this.charCodeAt(i);
+    hash  = ((hash << 5) - hash) + chr;
+    hash |= 0; // Convert to 32bit integer
+  }
+  return hash;
+};
 
-function getRouteStops(response, start) {
+
+function getRouteStops(response, start, startNum) {
   let selectElement = document.querySelectorAll('[name=bodegalist]');
   var allTemp = [...selectElement[0].options].map(o => o.value);
   var all = []
@@ -70,15 +85,20 @@ function getRouteStops(response, start) {
   route = [];
   route.push(start);
 
+  var routeNum = [];
+  routeNum.push(startNum);
+
   var legs = response.routes[0].legs;
 
 
   for (i=0;i<legs.length;i++) {
     var end_loc = [legs[i].end_location.lat(), legs[i].end_location.lng()];
-    var elements = [[11.333112, 22.655543], [35.31231, 33.2232], [122352, 343421]],
-    search_element = [32.1113, 34.5433];
-    route.push(allNames[all.indexOf(findClosestPair(all,end_loc))])
+    let index = all.indexOf(findClosestPair(all,end_loc));
+    route.push(allNames[index]);
+    routeNum.push(index);
   }
+
+
 
 
   for (i=0;i<route.length;i++) {
@@ -87,7 +107,7 @@ function getRouteStops(response, start) {
     node.appendChild(textnode);
     document.getElementById("rute").appendChild(node);
   }
-  
+  document.getElementById("saveRoute").innerHTML = "Gem rute til senere: " + routeNum.toString();
 }
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
@@ -103,7 +123,6 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
     all.push(allTempSplit)
   }
   
-  var currRoute = []
   var e = document.getElementById("start");
   startName = e.options[e.selectedIndex].text
 
@@ -152,7 +171,51 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
     })
     .then((response) => {
       directionsRenderer.setDirections(response);
-      getRouteStops(response, startName);
+      getRouteStops(response, startName, e.selectedIndex);
+    }).catch((e) => window.alert("Directions request failed due to " + status));
+      const route = response.routes[0];
+
+}
+
+function regenRoute(directionsService, directionsRenderer, routeString) {
+  var routeArray = routeString.split(",").map(Number);
+  let selectElement = document.querySelectorAll('[name=bodegalist]');
+  var allTemp = [...selectElement[0].options].map(o => o.value);
+  var all = []
+  for (i=0;i<allTemp.length;i++) {
+    var allTempSplit = allTemp[i].split(',').map(element => {
+      return Number(element);
+    });
+    all.push(allTempSplit)
+  }
+  var allNames = [...selectElement[0].options].map(o => o.text);
+  var currRoute = [];
+  let startName = allNames[routeArray[0]];
+  let startNum = routeArray[0];
+  let start = new google.maps.LatLng(all[routeArray[0]][0], all[routeArray[0]][1]);
+  routeArray.splice(0, 1);
+  let end = new google.maps.LatLng(all[routeArray[routeArray.length-1]][0],all[routeArray[routeArray.length-1]][1]);
+  routeArray.splice(routeArray.length-1,1);
+  for (i=0;i<routeArray.length;i++) {
+    currRoute.push({
+      location: new google.maps.LatLng(all[routeArray[i]][0], all[routeArray[i]][1]),
+      stopover: true,
+    });
+  }
+
+
+
+  directionsService
+    .route({
+      origin: start,
+      destination: end,
+      waypoints: currRoute,
+      optimizeWaypoints: true,
+      travelMode: google.maps.TravelMode.WALKING,
+    })
+    .then((response) => {
+      directionsRenderer.setDirections(response);
+      getRouteStops(response, startName, startNum);
     }).catch((e) => window.alert("Directions request failed due to " + status));
       const route = response.routes[0];
 }
