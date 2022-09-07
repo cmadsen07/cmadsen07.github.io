@@ -1,13 +1,19 @@
 <div id="quote">
-	{{ $slice := slice $.Site.Data.quotes.quotes }}
-	{{ $shuffled := shuffle (index $slice 0) }}
-	{{ $random := index $shuffled 0 }}
 	<figure class="quote">
-	  <blockquote>
-	    "{{$random.quote.text}}"
+	  <blockquote id="quote_text">
 	  </blockquote>
-	  <figcaption>
-	    &mdash; {{ $random.quote.name }}
+	  <figcaption id="quote_author">
 	  </figcaption>
 	</figure>
+
+	<script type="text/javascript" defer>
+		let quotes = {{index (slice $.Site.Data.quotes.quotes) 0}};
+		const date = new Date();
+		const random =  (date.getFullYear() * date.getDate() * (date.getMonth() + 1)) % quotes.length;
+		let item = quotes[random];
+		document.getElementById("quote_text").innerHTML = '"' + item.quote.text + '"';
+		if (item.quote.name.length != 0) {
+			document.getElementById("quote_author").innerHTML = "&mdash; " + item.quote.name;
+		}
+	</script>
 </div>
