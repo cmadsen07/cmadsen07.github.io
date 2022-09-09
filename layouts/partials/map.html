@@ -9,6 +9,16 @@
     {{end}}
   </select>
   <br />
+  <b>End:</b>
+  <select id="end" name="bodegalist">
+    {{range $.Site.Data.bodegaer.bodegaer}}
+      <option value="{{ .bodega.latLng }}">{{ .bodega.name}}</option>
+    {{end}}
+  </select>
+  <br />
+  <b>Use end</b>
+  <input type="checkbox" id="useEnd" name="useEnd">
+  <br />
   <b>Antal steder:</b>
   <select id="num">
     {{range $index, $element := $.Site.Data.bodegaer.bodegaer}}

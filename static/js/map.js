@@ -132,6 +132,27 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
   const startArr = start.split(',').map(element => {
     return Number(element);
   });
+  var checkbox = document.getElementById("useEnd").checked;
+  if (!checkbox) {
+    var end = start;
+    while (end == start) {
+     rand_num = Math.floor(Math.random() * all.length);
+      if (arrayEquals(startArr, all[rand_num])) {
+        rand_num = Math.floor(Math.random() * all.length);
+      } else {
+        var end = new google.maps.LatLng(all[rand_num][0], all[rand_num][1])
+        all.splice(rand_num, 1);
+      }
+    }
+  } else {
+    var endBox = document.getElementById("end");
+    var end = endBox.value;
+    if (end == start) {
+      alert("Der er sket en fejl, startpunkt og slutpunkt er ens.");
+      return
+    }
+    all.splice(endBox.selectedIndex, 1);
+  }
   while (waypts.length < num - 2) {
     rand_num = Math.floor(Math.random() * all.length);
     if (arrayEquals(startArr, all[rand_num])) {
@@ -144,22 +165,8 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
       all.splice(rand_num, 1);
     }
   }
-  var end = start;
-  while (end == start) {
- rand_num = Math.floor(Math.random() * all.length);
-  if (arrayEquals(startArr, all[rand_num])) {
-    rand_num = Math.floor(Math.random() * all.length);
-  } else {
-    var end = new google.maps.LatLng(all[rand_num][0], all[rand_num][1])
-    all.splice(rand_num, 1);
-  }
-}
 
-  
-  if (end == start) {
-    alert("Der er sket en fejl, prøv at genindlæse siden.");
-    return
-  }
+
 
   directionsService
     .route({

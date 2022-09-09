@@ -1,0 +1,58 @@
+<div id="scheduleDiv"></div>
+
+<div style="text-align:center;margin-top:10px;">
+	<b>Vælg skema:</b>
+  <select id="schedule_select" name="schedule_list" onchange="change_cookie()">
+    <option value="schedule_main.html">Hovedskema</option>
+    <option value="schedule_drede.html">Don Ø</option>
+  </select>
+</div>
+
+<script type="text/javascript" defer> 
+	function getCookie(name) {
+	    // Split cookie string and get all individual name=value pairs in an array
+	    var cookieArr = document.cookie.split(";");
+	    
+	    // Loop through the array elements
+	    for(var i = 0; i < cookieArr.length; i++) {
+	        var cookiePair = cookieArr[i].split("=");
+	        
+	        /* Removing whitespace at the beginning of the cookie name
+	        and compare it with the given string */
+	        if(name == cookiePair[0].trim()) {
+	            // Decode the cookie value and return
+	            return decodeURIComponent(cookiePair[1]);
+	        }
+	    }
+	    
+	    // Return null if not found
+	    return null;
+	}
+
+	function changeContent(selector) {
+		console.log(selector)
+		switch(selector) {
+			case 0:
+				document.getElementById("scheduleDiv").innerHTML = {{ partial "schedules/schedule_main.html" . }};
+				break
+			case 1:
+				document.getElementById("scheduleDiv").innerHTML = {{ partial "schedules/schedule_drede.html" . }};
+				break
+		}
+	}
+
+	function change_cookie() {
+		var drop = document.getElementById("schedule_select");
+		document.cookie = "schedule_selected=" + drop.selectedIndex + "; expires=Thu, 18 Dec 2023 12:00:00 UTC";
+		changeContent(drop.selectedIndex);
+	}
+
+	var schedule_selected = getCookie("schedule_selected");
+	if (schedule_selected) {
+		changeContent(parseInt(schedule_selected));
+		document.getElementById("schedule_select").selectedIndex=parseInt(schedule_selected)
+	} else {
+		changeContent(0);
+		document.getElementById("schedule_select").selectedIndex=0
+	}
+</script>
