@@ -88,3 +88,16 @@ img[src$='#center'] {
 .menu li {
   margin: 2px;
 }
+
+.main_frame_macro {
+  width: 100%;
+  border: 1px solid black;
+  overflow: hidden; /* will contain if #first is longer than #second */
+  height:400px;
+}
+.main_frame_macro .left_frame {
+  width: 50%;
+  float:left; /* add this */
+  border: 1px solid red;
+  height:100%;
+}

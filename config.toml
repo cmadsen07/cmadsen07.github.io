@@ -4,6 +4,7 @@ title = 'cmadsen'
 theme = "xmin" 
 pluralizeListTitles = "false"
 
+
 [[menu.main]]
 name = "Hjem"
 url = ""
