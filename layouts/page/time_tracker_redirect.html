@@ -1,0 +1,11 @@
+{{ partial "header.html" . }}
+
+{{ .Content }}
+
+<h2>Hvis siden ikke omdirigerer tryk på <a href="https://docs.google.com/spreadsheets/d/1uPeHEsseec9oD0k938bBKhZ0Mu1RpjhQJ5ijVJlwRdg/edit?usp=sharing">dette link</a></h2>
+
+<script>
+    window.location.replace("https://docs.google.com/spreadsheets/d/1uPeHEsseec9oD0k938bBKhZ0Mu1RpjhQJ5ijVJlwRdg/edit?usp=sharing")
+</script>
+
+{{ partial "footer.html" . }}   

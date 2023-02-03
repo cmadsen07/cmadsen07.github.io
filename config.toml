@@ -26,6 +26,11 @@ url = "termer/"
 weight = 4
 
 [[menu.main]]
+name = "Time track"
+url = "time_tracker/"
+weight = 5
+
+[[menu.main]]
 name = "Kontakt"
 url = "kontakt/"
 weight = 10
