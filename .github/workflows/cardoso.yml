@@ -1,6 +1,7 @@
 name: run cardoso.py
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0 * * *' # At 00:00 on Monday
 
