@@ -30,3 +30,7 @@ jobs:
           git add .
           git commit -m "crongenerated"
           git push
+          
+  call-deploy-in-local-repo:
+    needs: build
+    uses: ./.github/workflows/hugo.yml
