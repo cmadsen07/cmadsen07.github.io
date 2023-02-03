@@ -23,14 +23,10 @@ jobs:
           pip install -r requirements.txt
 
       - name: execute py script # run main.py
-        run: python cardoso.py
-
-      - name: Archive code results
-        uses: actions/upload-artifact@v3
-        with:
-          name: time_tracker json
-          path: data/time_tracker.json
-
-  call-deploy-in-local-repo:
-    needs: build
-    uses: ./.github/workflows/hugo.yml
+        run: |
+          python cardoso.py
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "crongenerated"
+          git push
