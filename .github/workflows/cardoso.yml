@@ -25,5 +25,5 @@ jobs:
       - name: execute py script # run main.py
         run: python cardoso.py
 
-    call-deploy-in-local-repo:
-      uses: ./.github/workflows/hugo.yml
+  call-deploy-in-local-repo:
+    uses: ./.github/workflows/hugo.yml
