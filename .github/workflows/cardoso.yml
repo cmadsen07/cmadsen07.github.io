@@ -30,7 +30,10 @@ jobs:
           git add .
           git commit -m "crongenerated"
           git push
-          
+      - name: Sleep for 60 seconds
+        run: sleep 60s
+        shell: bash
+
   call-deploy-in-local-repo:
     needs: build
     uses: ./.github/workflows/hugo.yml
