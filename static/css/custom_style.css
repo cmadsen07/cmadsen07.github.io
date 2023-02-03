@@ -101,3 +101,19 @@ img[src$='#center'] {
   border: 1px solid red;
   height:100%;
 }
+
+.clock {
+  text-align: center;
+}
+
+.clock #time {
+  font-size: 10em;
+  margin-top:0px;
+  margin-bottom:0px;
+  padding-bottom:0px;
+}
+
+.clock #description {
+  margin-top:0px;
+  padding-top:0px;
+}
