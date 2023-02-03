@@ -26,4 +26,5 @@ jobs:
         run: python cardoso.py
 
   call-deploy-in-local-repo:
+    needs: build
     uses: ./.github/workflows/hugo.yml
