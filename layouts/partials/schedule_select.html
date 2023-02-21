@@ -30,7 +30,6 @@
 	}
 
 	function changeContent(selector) {
-		console.log(selector)
 		switch(selector) {
 			case 0:
 				document.getElementById("scheduleDiv").innerHTML = {{ partial "schedules/schedule_main.html" . }};

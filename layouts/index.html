@@ -1,3 +1,4 @@
+<canvas id="tv-screen" style="position: absolute; top:0;right:0;left:0;bottom:0;pointer-events:none;max-width:100%"><script src="js/dvd_bounce.js"></script></canvas>
 {{ partial "header.html" . }}
 
 {{ partial "logo.html" . }}
@@ -8,5 +9,65 @@
 
 {{ partial "schedule_select.html" .}}
 
+<div id="scheduleDiv"></div>
+
+<div style="text-align:center;margin-top:10px;">
+	<b>Vælg Marbin:</b>
+  <select id="marbin_select" name="schedule_list" onchange="change_cookie_marbin()">
+    <option value="0">Nej</option>
+    <option value="1">Ja</option>
+  </select>
+</div>
+
+<script type="text/javascript" defer> 
+	function getCookie(name) {
+	    // Split cookie string and get all individual name=value pairs in an array
+	    var cookieArr = document.cookie.split(";");
+	    
+	    // Loop through the array elements
+	    for(var i = 0; i < cookieArr.length; i++) {
+	        var cookiePair = cookieArr[i].split("=");
+	        
+	        /* Removing whitespace at the beginning of the cookie name
+	        and compare it with the given string */
+	        if(name == cookiePair[0].trim()) {
+	            // Decode the cookie value and return
+	            return decodeURIComponent(cookiePair[1]);
+	        }
+	    }
+	    
+	    // Return null if not found
+	    return null;
+	}
+
+	function changeContentMarbin(selector) {
+		switch(selector) {
+			case 0:
+				document.getElementById("tv-screen").style.display = "none";
+				break
+			case 1:
+				document.getElementById("tv-screen").style.display = "inline";
+				break
+		}
+	}
+
+	function change_cookie_marbin() {
+		var drop = document.getElementById("marbin_select");
+		document.cookie = "marbin_selected=" + drop.selectedIndex + "; expires=Thu, 18 Dec 2023 12:00:00 UTC";
+		changeContentMarbin(drop.selectedIndex);
+	}
+
+	var marbin_selected = getCookie("marbin_selected");
+	console.log(marbin_selected);
+	if (marbin_selected) {
+		changeContentMarbin(parseInt(marbin_selected));
+		document.getElementById("marbin_select").selectedIndex=parseInt(marbin_selected)
+	} else {
+		changeContent(0);
+		document.getElementById("marbin_select").selectedIndex=0
+	}
+</script>
+
 
 {{ partial "footer.html" . }}
+</canvas>
